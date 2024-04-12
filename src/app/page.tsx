@@ -1,8 +1,13 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { Button, Card, ProjectCard } from "@/components";
+import { getPosts } from "@/db/queries/post";
 
 export default async function Home() {
+  const posts = await getPosts();
+
+  console.log("post", posts);
+
   return (
     <div className={styles["page-container"]}>
       <section className={styles["about-section"]}>

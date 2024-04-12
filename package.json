@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate:pg --schema ./src/db/schema.ts --out=./src/db/migrations",
+    "db:migrate": "bun run ./src/db/migrate.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -14,6 +16,8 @@
     "@next/mdx": "^14.2.0",
     "@slicemachine/init": "latest",
     "@types/mdx": "^2.0.13",
+    "@vercel/postgres": "^0.8.0",
+    "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.30.8",
     "google": "^2.1.0",
     "next": "14.1.4",
