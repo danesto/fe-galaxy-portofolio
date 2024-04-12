@@ -1,0 +1,46 @@
+.primary,
+.secondary,
+.outline,
+.link {
+  cursor: pointer;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  color: var(--primary-dark);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: transparent;
+  border: unset;
+}
+
+.primary {
+  border: 1px solid var(--primary-dark);
+  background-color: #fff;
+}
+
+.primary:hover {
+  border: 1px solid var(--primary-orange);
+  color: var(--primary-orange);
+  background-color: var(--primary-orange);
+  color: white;
+}
+
+.primary:active {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 4px;
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 1rem;
+}
+
+.link:hover {
+  text-underline-offset: 6px;
+}
+
+.link:active {
+  outline: 1px solid var(--primary-dark);
+  outline-offset: 4px;
+}

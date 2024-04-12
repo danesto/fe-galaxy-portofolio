@@ -1,0 +1,12 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--primary-dark);
+  width: 45%;
+}
+
+.project-card a {
+  color: var(--primary-orange);
+}

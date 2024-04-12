@@ -1,0 +1,28 @@
+.card {
+  padding: 1rem;
+  border: 1px solid var(--primary-dark);
+  max-width: 31%;
+
+  & .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .card-footer {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    & .card-footer a {
+      width: 100%;
+    }
+  }
+
+  & .card-wrapper h3 {
+    color: var(--primary-dark);
+  }
+
+  & .card-wrapper p {
+    color: rgb(97, 95, 95);
+  }
+}

@@ -1,4 +1,6 @@
+import * as NextMdx from "@next/mdx";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-export default nextConfig;
+NextMdx.default(nextConfig);

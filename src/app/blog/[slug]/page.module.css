@@ -1,0 +1,76 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  color: var(--primary-dark);
+  padding: 2rem 0;
+  row-gap: 2rem;
+}
+
+.container h1 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.container h2 {
+  margin-top: 1rem;
+}
+
+.container p:first-of-type {
+  font-weight: 300;
+}
+
+.container img {
+  max-width: 100%;
+}
+
+.container p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.container ul {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.container ul li {
+  font-size: 1.1rem;
+}
+
+.container blockquote {
+  border-left: 4px solid var(--primary-orange);
+  padding-left: 1rem;
+}
+
+.container blockquote > p {
+  font-weight: 500 !important;
+  font-style: italic;
+  margin: 1rem 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+}
+
+.container a {
+  color: var(--primary-orange);
+  font-weight: 400;
+}
+
+.container a:hover {
+  color: var(--dark-orange);
+}
+
+.container a:active {
+  color: var(--dark-orange);
+  outline: 1px solid var(--dark-orange);
+  outline-offset: 2px;
+}
+
+.container aside {
+  background-color: aliceblue;
+}
