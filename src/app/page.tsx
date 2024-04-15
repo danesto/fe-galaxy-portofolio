@@ -1,12 +1,10 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { Button, Card, ProjectCard } from "@/components";
-import { getPosts } from "@/db/queries/post";
+import { listPosts } from "@/db/queries/post";
 
 export default async function Home() {
-  const posts = await getPosts();
-
-  console.log("post", posts);
+  const postsList = await listPosts();
 
   return (
     <div className={styles["page-container"]}>
@@ -39,39 +37,29 @@ const favoriteTechAndTools = [
           <Link href="#read"># Read preview</Link>
         </h1>
         <div className={styles["read-cards"]}>
-          <Card
-            title="NextJS scraper with cheerio and redis"
-            description="
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, enim?
-        "
-            date="12.03.24"
-          />
-          <Card
-            title="NextJS scraper with cheerio and redis"
-            description="
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, enim?
-        "
-            date="12.03.24"
-          />
-          <Card
-            title="NextJS scraper with cheerio and redis"
-            description="
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, enim?
-        "
-            date="12.03.24"
-          />
-          <Card
-            title="NextJS scraper with cheerio and redis"
-            description="
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, enim?
-        "
-            date="12.03.24"
-          />
+          {!!postsList?.length &&
+            postsList.map(({ title, slug, subtitle, createdAt }) => {
+              return (
+                <Card
+                  key={title}
+                  title={title}
+                  description={subtitle}
+                  slug={slug}
+                  date={createdAt.toDateString()}
+                />
+              );
+            })}
+
+          {!!!postsList?.length && "There are no posts at the moment..."}
         </div>
-        <div className={styles["section-cta"]}>
-          <Button variant="link">See all</Button>
-        </div>
+
+        {postsList && postsList.length > 4 && (
+          <div className={styles["section-cta"]}>
+            <Button variant="link">See all</Button>
+          </div>
+        )}
       </section>
+
       <section>
         <h1 className={styles["section-title"]}>
           <Link href="#read"># Projects</Link>
